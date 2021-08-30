@@ -1,0 +1,33 @@
+################################################################################
+# piipdisp.service
+#
+# This file is a very minor adaptation by DAW from an example found at
+# https://www.redhat.com/sysadmin/replacing-rclocal-systemd
+# Original comments follow:
+#
+###############################################################################
+#
+# mystartup.service
+#
+# This service unit is for testing my systemd startup service
+# By David Both
+# Licensed under GPL V2
+#
+################################################################################
+# This program should be placed in /usr/local/lib/systemd/system/.
+# Create a symlink to it from the /etc/systemd/system directory.
+################################################################################
+
+[Unit]
+
+Description=Runs /usr/local/bin/piipdisp.py
+
+  
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/piipdisp.py
+
+
+[Install]
+
+WantedBy=multi-user.target
